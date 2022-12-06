@@ -1,5 +1,38 @@
 {
-  "name": "WaWa_Produce",
+  "name": "wawa_produce",
   "private": true,
-  "dependencies": {}
+  "description": "This README would normally document whatever steps are necessary to get the application up and running.",
+  "version": "1.0.0",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zackalsiday/WaWa-Produce.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zackalsiday/WaWa-Produce/issues"
+  },
+  "homepage": "https://github.com/zackalsiday/WaWa-Produce#readme",
+  "dependencies": {
+    "@babel/core": "^7.20.5",
+    "@babel/preset-env": "^7.20.2",
+    "@babel/preset-react": "^7.18.6",
+    "babel-loader": "^9.1.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-redux": "^8.0.5",
+    "react-router-dom": "^6.4.4",
+    "redux": "^4.2.0",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.1"
+  }
 }
