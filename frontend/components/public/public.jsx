@@ -21,6 +21,7 @@ class Public extends React.Component{
                         <h4>{item.name}</h4>
                         <h4>${item.price}</h4>
                         <h4>{item.description}</h4>
+                        <h4>{item.quantity} in stock</h4>
                     </li>
                 ))}
             </ul>
