@@ -5,6 +5,7 @@ import LogInFormContainer from './session_form/login_form_container';
 import PublicContainer from './public/public_container'
 import {Route, Switch, Link} from 'react-router-dom'
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
+import OrderContainer from './order/order_container'
 const App = () => (
  <div>
     <header>
@@ -12,10 +13,12 @@ const App = () => (
         <h1>WaWa</h1>
       </Link>
       <GreetingContainer />
+      <ProtectedRoute path='/' component={OrderContainer} />
     </header>
     <Switch>
       <AuthRoute exact path="/login" component={LogInFormContainer} />
       <AuthRoute exact path="/signup" component={SignUpFormContainer} />
+      
       <PublicContainer/>
     </Switch>
   </div>

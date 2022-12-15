@@ -6,7 +6,7 @@ import ordersReducer from "./orders_reducer"
 const entitiesReducer = combineReducers({
     users: usersReducer,
     products: productsReducer,
-    order: ordersReducer
+    orders: ordersReducer
 
 });
 
