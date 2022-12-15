@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import {login} from './actions/session_actions'
 import { logout } from './actions/session_actions'
 import { signup } from './actions/session_actions'
+import { fetchProduct, fetchProducts, createProduct, updateProduct, deleteProduct } from './actions/product_actions'
 import Root from './components/root'
 import configureStore from './store/store';
 document.addEventListener("DOMContentLoaded", () => {
@@ -25,6 +26,11 @@ document.addEventListener("DOMContentLoaded", () => {
     window.login = login 
     window.logout = logout 
     window.signup = signup 
+    window.fetchProduct = fetchProduct
+    window.fetchProducts = fetchProducts
+    window.createProduct = createProduct
+    window.updateProduct = updateProduct
+    window.deleteProduct = deleteProduct
 //   const root = document.getElementById("root");
   ReactDOM.render(<Root store={store} />, root);
 });
