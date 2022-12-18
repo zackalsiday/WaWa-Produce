@@ -1,4 +1,7 @@
 import React from "react";
+import {ToastContainer, toast} from 'react-toastify'
+import "react-toastify/dist/ReactToastify.css"
+
 import GreetingContainer from "./greeting/greeting_container"
 import SignUpFormContainer from './session_form/signup_form_container';
 import LogInFormContainer from './session_form/login_form_container';
@@ -7,7 +10,6 @@ import {Router, Switch, Link,BrowserRouter, Routes} from 'react-router-dom'
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import OrderContainer from './order/order_container'
 import Cart from './cart'
-import NavBar from "./navBar";
 const App = () => (
  <div>
     <header>
@@ -21,7 +23,6 @@ const App = () => (
 
       {/* <AuthRoute path="/" component={NavBar}/> */}
   
-  
     <Switch>
       <AuthRoute   exact path="/" component={PublicContainer}/>
       <AuthRoute exact path="/cart" component={Cart}/>
@@ -29,6 +30,7 @@ const App = () => (
       <AuthRoute  exact path="/signup" component={SignUpFormContainer} />
     </Switch>
     
+    <ToastContainer/>
 
   </div>
 );
