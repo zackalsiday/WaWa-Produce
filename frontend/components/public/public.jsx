@@ -6,22 +6,28 @@ import {useDispatch} from 'react-redux'
 import { useHistory } from 'react-router'
 import {addToCart} from '../../reducers/cartSlice'
 import usersReducer from '../../reducers/users_reducer';
+import { useSelector } from "react-redux";
+import configureStore from '../../store/store'
 // import { ToastContainer } from "react-toastify";
 // import "react-toastify/dist/ReactToastify.css";
 // const history = useHistory()
-
+// const state = configureStore().getState()
+// const { cartTotalQuantity } = useSelector(state => state.entities.carts);
 
 class Public extends React.Component{
-
+  
     constructor(props){
         super(props)
+        //  const state = configureStore().getState()
+        // const { cartTotalQuantity } = useSelector((state) => state.cart);
         this.handleAddToCart = this.handleAddToCart.bind(this)
     }
      componentDidMount(){
-        
+    //    console.log(this.props)
         this.props.fetchProducts()
        
     }
+     
     
     //  quantityChoice(limit){
     //     let Options = []
@@ -107,7 +113,7 @@ class Public extends React.Component{
                             </svg>
                             <span className='bag-quantity'>
                                 <span>
-                                    3
+                                    {this.props.state}
                                 </span>
                             </span>
                         </div>

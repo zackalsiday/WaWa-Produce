@@ -6,6 +6,7 @@ import { signup } from './actions/session_actions'
 import { fetchProduct, fetchProducts, createProduct, updateProduct, deleteProduct } from './actions/product_actions'
 import { fetchOrder, fetchOrders, createOrder, updateOrder, deleteOrder } from './actions/order_actions'
 import Root from './components/root'
+import {getTotals} from './reducers/cartSlice'
 import configureStore from './store/store';
 document.addEventListener("DOMContentLoaded", () => {
     const root = document.getElementById("root");
@@ -21,7 +22,9 @@ document.addEventListener("DOMContentLoaded", () => {
         delete window.currentUser;
     } else {
         store = configureStore();
+
     }
+    store.dispatch(getTotals())
     window.getState = store.getState;
     window.dispatch = store.dispatch;
     window.login = login 
