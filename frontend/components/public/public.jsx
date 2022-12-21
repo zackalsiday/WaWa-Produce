@@ -3,16 +3,24 @@ import { Router, Switch, Link, BrowserRouter, Route } from 'react-router-dom'
 import { AuthRoute, ProtectedRoute } from '../../util/route_util';
 import Cart from '../cart'
 import {useDispatch} from 'react-redux'
+import { useHistory } from 'react-router'
 import {addToCart} from '../../reducers/cartSlice'
+import usersReducer from '../../reducers/users_reducer';
+// import { ToastContainer } from "react-toastify";
+// import "react-toastify/dist/ReactToastify.css";
+// const history = useHistory()
+
+
 class Public extends React.Component{
+
     constructor(props){
         super(props)
-
         this.handleAddToCart = this.handleAddToCart.bind(this)
     }
      componentDidMount(){
-        this.props.fetchProducts()
         
+        this.props.fetchProducts()
+       
     }
     
     //  quantityChoice(limit){
@@ -38,10 +46,16 @@ class Public extends React.Component{
             return Options
     }
 
-    handleAddToCart = (product) => (
+    handleAddToCart = (product) => {
+       
          dispatch(addToCart(product))
+        this.props.history.push("/cart")
+        
+    }
+       
+        //  history.push("/cart")
         // console.log(product)
-    )
+    
 
   
     listProducts(){
@@ -65,6 +79,7 @@ class Public extends React.Component{
                     </div>
 
 ))}
+
             </div>
         )
     }
@@ -80,6 +95,7 @@ class Public extends React.Component{
         return (
             
            <div className='public-container'>
+            
                 <nav className='nav-bar'>
                     <Link to='/'>
                         <h2>OnlineShop</h2>
@@ -101,6 +117,19 @@ class Public extends React.Component{
                 <h2>New Arrivals</h2>
                 {this.listProducts()}
             </div>
+                {/* <ToastContainer
+                    position="bottom-left"
+                    autoClose={5000}
+                    hideProgressBar={false}
+                    newestOnTop={false}
+                    closeOnClick
+                    rtl
+                    pauseOnFocusLoss
+                    draggable
+                    pauseOnHover
+                    theme="colored"
+                /> */}
+                
             </div>
             
         )
@@ -108,3 +137,4 @@ class Public extends React.Component{
 }
 
 export default Public
+

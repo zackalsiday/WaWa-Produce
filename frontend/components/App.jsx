@@ -1,7 +1,7 @@
 import React from "react";
-import {ToastContainer, toast} from 'react-toastify'
-import "react-toastify/dist/ReactToastify.css"
-
+import { ToastContainer, toast } from 'react-toastify';
+// import 'react-toastify/dist/ReactToastify.css';
+// import 'react-toastify/dist/ReactToastify.min.css';
 import GreetingContainer from "./greeting/greeting_container"
 import SignUpFormContainer from './session_form/signup_form_container';
 import LogInFormContainer from './session_form/login_form_container';
@@ -22,15 +22,16 @@ const App = () => (
   
 
       {/* <AuthRoute path="/" component={NavBar}/> */}
-  
+    {/* <ToastContainer
+                
+                /> */}
     <Switch>
       <AuthRoute   exact path="/" component={PublicContainer}/>
       <AuthRoute exact path="/cart" component={Cart}/>
       <AuthRoute exact path="/login" component={LogInFormContainer} />
       <AuthRoute  exact path="/signup" component={SignUpFormContainer} />
     </Switch>
-    
-    <ToastContainer/>
+  
 
   </div>
 );
