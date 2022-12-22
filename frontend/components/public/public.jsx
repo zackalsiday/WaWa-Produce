@@ -8,6 +8,7 @@ import {addToCart} from '../../reducers/cartSlice'
 import usersReducer from '../../reducers/users_reducer';
 import { useSelector } from "react-redux";
 import configureStore from '../../store/store'
+// import offical from '../../images/offical.png'
 // import { ToastContainer } from "react-toastify";
 // import "react-toastify/dist/ReactToastify.css";
 // const history = useHistory()
@@ -76,6 +77,7 @@ class Public extends React.Component{
                             <span>{item.description}</span>
                             <span className="price">${item.price}</span>
                         </div>
+                        <div>{item.quantity} in Stock</div>
                         <button onClick={() => this.handleAddToCart(item)}>Add To Cart</button>
                         {/* <img src={item.image} height='150px' width='150px' />
                         <h4>{item.name}</h4>
@@ -101,10 +103,10 @@ class Public extends React.Component{
         return (
             
            <div className='public-container'>
-            
-                <nav className='nav-bar'>
-                    <Link to='/'>
-                        <h2>OnlineShop</h2>
+                <div className='header'>
+                       
+                    <Link to="/" className="header-link">
+                    <img className='offical-logo' src='/offical.png'/>
                     </Link>
                     <Link to='/cart'>
                         <div className='nav-bag'>
@@ -118,9 +120,21 @@ class Public extends React.Component{
                             </span>
                         </div>
                     </Link>
+                </div>
+                <nav className='nav-bar'>
+                    <Link to='/'>
+                        <h3>Home</h3>
+                    </Link>
+                    <Link>
+                    <h3>About</h3>
+                    </Link>
+                    <Link>
+                    <h3>Contact</h3>
+                    </Link>
+                   
                 </nav>
             <div>
-                <h2>New Arrivals</h2>
+                {/* <h2>New Arrivals</h2> */}
                 {this.listProducts()}
             </div>
                 {/* <ToastContainer

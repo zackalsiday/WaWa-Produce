@@ -13,9 +13,10 @@ import Cart from './cart'
 const App = () => (
  <div>
     <header>
-      <Link to="/" className="header-link">
+      {/* <Link to="/" className="header-link">
         <h1>WaWa</h1>
-      </Link>
+      </Link> */}
+      
       <GreetingContainer />
       <ProtectedRoute path='/' component={OrderContainer} />
     </header>
