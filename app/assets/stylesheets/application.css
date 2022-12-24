@@ -131,7 +131,7 @@
     justify-content: space-between;
     margin: 1rem auto;
     padding: 1rem;
-    border-radius: 15px;
+    /* border-radius: 15px; */
     box-shadow: -5px -5px 10px rgba(225, 225, 225, 0.5), 2px 2px 5px rgba(94, 104, 121, 0.3);
  }
 
@@ -152,10 +152,11 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    /* font-size: 25px; */
  }
 
  .product .details .price{
-    font-size: 20px;
+    font-size: 25px;
     font-weight: 700;
  }
 
@@ -165,6 +166,7 @@
     border-radius: 5px;
     margin-top: 2rem;
     font-weight: 400;
+    font-size: larger;
     border: none;
     outline: none;
     cursor: pointer;
@@ -375,4 +377,106 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.card{
+    width: 35%;
+    position: relative; 
+    border-style: solid;
+    border-width: thin;
+    border-color: orange;
+    padding: 1rem 1rem 1rem 1rem;
+    margin: 3rem;
+}
+.card-body{
+    padding-top: 1rem;
+}
+
+.card-header{
+    font-size: larger;
+}
+.card-body div{
+    padding-bottom: 2rem;
+}
+
+.card-body label{
+    font-size: larger;
+}
+
+.card-body input{
+    position: absolute;
+    right: 1rem;
+    height: 40px;
+    width: 200px;
+   /* padding-left: 1rem; */
+   font-size: larger;
+   outline: none;
+   border-color: #59ce28;
+   border-width: thin;
+}
+
+.form-button{
+        width: 100%;
+        height: 48px;
+        border-radius: 5px;
+        font-weight: 400;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        background: #59ce28;
+        color: white;
+        letter-spacing: 1.15px;
+        transition: .3s;
+}
+
+.form-button:hover{
+    background-color: #7ed957;
+}
+
+.checkout-summary{
+        width: 35%;
+        position: relative;
+        border-style: solid;
+        border-width: thin;
+        border-color: orange;
+        padding: 1rem 1rem 1rem 1rem;
+        margin: 3rem;
+}
+
+.summary-header{
+    font-size: larger;
+}
+
+.summary-body{
+    padding-top: 1rem;
+}
+
+.checked-item{
+    display: flex;
+    justify-content: space-between;
+}
+.summary-footer{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 1rem;
+}
+/* .summary-total{
+    position: absolute;
+    right: 1rem;
+    padding-top: 1rem;
+} */
+
+.edit-summary{
+    border-style: none;
+    padding: 0 1rem 0 1rem;
+    transition: .3s;
+}
+
+.edit-summary:hover{
+    color: orange
+}
+
+.checkout-page{
+    display: flex;
+    justify-content: space-between;
 }

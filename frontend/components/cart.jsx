@@ -100,7 +100,9 @@ const Cart = () => {
                                 <span className="amount">${cart.cartTotalAmount}</span>
                             </div>
                             <p>Taxes and shipping calculated at checkout</p>
+                            <Link to='/checkout'>
                             <button>Check Out</button>
+                            </Link>
                                 <div className="continue-shopping">
                                     <Link to='/'>
                                         <svg
