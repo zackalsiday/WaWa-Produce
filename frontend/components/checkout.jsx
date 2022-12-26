@@ -22,6 +22,7 @@ const Checkout = () => {
     const listProducts = () => {
         return (
             <div className='summary-body'>
+               
                 {cart.cartItems.length === 0 ? 
                 <div>
                     Nothing Here Yet
@@ -52,12 +53,13 @@ const Checkout = () => {
     return (
         <div className='checkout-page'>
             <div className='card'>
+                {console.log(cart)}
                 <div className='card-header'>
                     <h4>Basic Information</h4>
                 </div>
                 <div className='card-body'>
                     <div className='form-name'>
-                        <label>First Name</label>
+                        <label>Business Name</label>
                         <input type="text" name='name' />
                     </div>
                     <div className='form-number'>

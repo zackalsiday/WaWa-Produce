@@ -1,0 +1,2 @@
+class AddPhoneToOrder < ApplicationRecord
+end
