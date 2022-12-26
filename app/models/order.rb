@@ -5,4 +5,6 @@ class Order < ApplicationRecord
     validates :product_id, presence: true
     validates :quantity, presence: true 
     validates :total, presence: true 
+    validates :phone, presence: true 
+    validates :address, presence: true 
 end

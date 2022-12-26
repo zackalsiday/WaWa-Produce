@@ -5,13 +5,7 @@ import {Link} from 'react-router-dom'
 import { Item } from 'semantic-ui-react';
 import { useEffect } from "react";
 import { fetchOrder, fetchOrders, createOrder, updateOrder, deleteOrder } from '../actions/order_actions'
-import {
-    addToCart,
-    clearCart,
-    decreaseCart,
-    getTotals,
-    removeFromCart
-} from "../reducers/cartSlice";
+import {clearCart, getTotals} from '../reducers/cartSlice'
 const Checkout = () => {
     let state = configureStore().getState()
     const cart = useSelector((state) => state.entities.carts)
@@ -31,9 +25,11 @@ const Checkout = () => {
         productName: '',
         productId: '',
         quantity: '',
-        price: '',
         total: ''
     }
+    const handleClearCart = () => {
+        dispatch(clearCart());
+    };
 
     const updateState = (place, value) =>{
         initialState[place] = value
@@ -41,8 +37,13 @@ const Checkout = () => {
     }
 
     const handleSubmit = () => {
-        const {name, phone, email, productName, productId, quantity, price, total, address, city, state, zipcode} = initialState
-        createOrder({name: name, email: email, phone: phone, productName: productName, productId: productId, quantity: quantity, price: price, total: total, address: address + ',' + city + ',' + state +','+zipcode})
+        const {name, phone, email, productName, productId, quantity, total, address, city, state, zipcode} = initialState
+       
+               cart.cartItems.map(cartItem => (
+            dispatch(createOrder({ name: name, email: email, phone: `${phone}`, product_name: cartItem.name, product_id: cartItem.id, quantity: cartItem.cartQuantity, total: cartItem.cartQuantity * cartItem.price, address: `${address}, ${city}, ${state}, ${zipcode}` }))
+        )).then(handleClearCart()).then(localStorage.clear())
+        
+     
     }
 
     const listProducts = () => {
@@ -79,7 +80,8 @@ const Checkout = () => {
     return (
         <div className='checkout-page'>
             <div className='card'>
-                <form onSubmit={handleSubmit()}>
+                {/* {console.log(cart)} */}
+                <form onSubmit={handleSubmit}>
                     {/* {dispatch(fetchOrders()).then(res => {console.log(res)})} */}
                     <div className='card-header'>
                         <h4>Basic Information</h4>
