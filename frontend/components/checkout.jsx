@@ -1,18 +1,21 @@
 import React from 'react'
 import configureStore from '../store/store'
 import { useSelector } from "react-redux";
-import {Link} from 'react-router-dom'
+import {Link, useHistory, Redirect} from 'react-router-dom'
 import { Item } from 'semantic-ui-react';
 import { useEffect } from "react";
 import { fetchOrder, fetchOrders, createOrder, updateOrder, deleteOrder } from '../actions/order_actions'
 import {clearCart, getTotals} from '../reducers/cartSlice'
-const Checkout = () => {
+import usersReducer from '../reducers/users_reducer';
+const Checkout = (props) => {
     let state = configureStore().getState()
     const cart = useSelector((state) => state.entities.carts)
 
         useEffect(() => {
         dispatch(getTotals());
+        
     }, [cart, dispatch]);
+    // const history = useHistory()
 
     const initialState = {
         name: '',
@@ -25,32 +28,38 @@ const Checkout = () => {
         productName: '',
         productId: '',
         quantity: '',
-        total: ''
+        total: '',
+        Re: 'no'
     }
     const handleClearCart = () => {
-        dispatch(clearCart());
+        dispatch(clearCart())
     };
-
+    
+    const update = () => {
+        initialState[Re] = 'yes'
+    }
+    
     const updateState = (place, value) =>{
         initialState[place] = value
-        console.log(initialState)
     }
 
     const handleSubmit = () => {
-        const {name, phone, email, productName, productId, quantity, total, address, city, state, zipcode} = initialState
-       
-               cart.cartItems.map(cartItem => (
+        const {name, phone, email, productName, productId, quantity, total, address, city, state, zipcode,Re} = initialState
+ 
+         cart.cartItems.map(cartItem => (
             dispatch(createOrder({ name: name, email: email, phone: `${phone}`, product_name: cartItem.name, product_id: cartItem.id, quantity: cartItem.cartQuantity, total: cartItem.cartQuantity * cartItem.price, address: `${address}, ${city}, ${state}, ${zipcode}` }))
-        )).then(handleClearCart()).then(localStorage.clear())
-        
+            )).then(props.history.push('/success'))
+       
+       
+       
      
     }
-
     const listProducts = () => {
         return (
             <div className='summary-body'>
-               
+               {/* {console.log(props)} */}
                 {cart.cartItems.length === 0 ? 
+
                 <div>
                     Nothing Here Yet
                 </div> 
@@ -80,8 +89,11 @@ const Checkout = () => {
     return (
         <div className='checkout-page'>
             <div className='card'>
-                {/* {console.log(cart)} */}
-                <form onSubmit={handleSubmit}>
+                {/* {console.log(props)}
+                {console.log(initialState)} */}
+                {/* {console.log(initialState)} */}
+                {/* {props.location.pathname !== '/checkout' ? <Redirect to="/success"/> : ''} */}
+                <form >
                     {/* {dispatch(fetchOrders()).then(res => {console.log(res)})} */}
                     <div className='card-header'>
                         <h4>Basic Information</h4>
@@ -151,7 +163,9 @@ const Checkout = () => {
                             />
                         </div>
                         <div >
-                            <input type="submit"  className="form-button" value='Place Order'/>
+                        
+                            {/* <input type="submit"  className="form-button" value='Place Order'/> */}
+                            <button onClick={() => handleSubmit()}className='form-button'>Place Order</button>
 
                         </div>
                     </div>

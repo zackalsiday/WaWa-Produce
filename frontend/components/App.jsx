@@ -11,6 +11,7 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import OrderContainer from './order/order_container'
 import Cart from './cart'
 import Checkout from "./checkout";
+import Success from "./success";
 const App = () => (
  <div>
     <header>
@@ -33,6 +34,7 @@ const App = () => (
       <AuthRoute exact path="/login" component={LogInFormContainer} />
       <AuthRoute  exact path="/signup" component={SignUpFormContainer} />
       <AuthRoute exact path="/checkout" component={Checkout}/>
+      <AuthRoute exact path="/success" component={Success}/>
     </Switch>
   
 
