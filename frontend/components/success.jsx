@@ -10,7 +10,7 @@ const Success = (props) => {
              dispatch(clearCart())
     }, []);
     return (
-        <div>
+        <div className='success-container'>
             <h2 className='success-header'>Your order has been placed successfully</h2>
             <h3 className='success-header-sms'>You should recieve an SMS confirmation shortly</h3>
             <div className="cart-empty">

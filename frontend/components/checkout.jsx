@@ -79,6 +79,9 @@ const Checkout = (props) => {
                         Total: ${cart.cartTotalAmount}
                         </div>
                     </div>
+                        <Link to='/'>
+                            <button className='add-item'>Add More Items</button>
+                        </Link>
               
                 </div>
                 }
@@ -96,7 +99,7 @@ const Checkout = (props) => {
                 <form >
                     {/* {dispatch(fetchOrders()).then(res => {console.log(res)})} */}
                     <div className='card-header'>
-                        <h4>Basic Information</h4>
+                        <h4>Information</h4>
                     </div>
                     <div className='card-body'>
                         <div className='form-name'>

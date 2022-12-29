@@ -388,12 +388,20 @@
 
 .card{
     width: 35%;
+    height: 100%;
     position: relative; 
-    border-style: solid;
-    border-width: thin;
-    border-color: orange;
+    /* background-color: green; */
+    border-style: none;
     padding: 1rem 1rem 1rem 1rem;
     margin: 3rem;
+    min-width: 35%;
+    /* display: flex;
+    flex-direction: column;
+    justify-content: space-between; */
+    margin: 1rem auto;
+    padding: 1rem;
+    /* border-radius: 15px; */
+    box-shadow: -5px -5px 10px rgba(225, 225, 225, 0.5), 2px 2px 5px rgba(94, 104, 121, 0.3);
 }
 .card-body{
     padding-top: 1rem;
@@ -410,16 +418,35 @@
     font-size: larger;
 }
 
-.card-body input{
+/* .card-body input{
     position: absolute;
     right: 1rem;
     height: 40px;
     width: 200px;
-   /* padding-left: 1rem; */
+   padding-left: 1rem;
+   border-style: solid;
+   border-width: 1px;
    font-size: larger;
    outline: none;
-   border-color: #59ce28;
+   border-color: orange;
    border-width: thin;
+
+} */
+
+.card-body div{
+    display: flex;
+    justify-content: space-between;
+}
+
+.card-body input{
+    height: 30%;
+    width: 40%;
+    border-style: solid;
+        border-width: 1px;
+        font-size: larger;
+        outline: none;
+        border-width: thin;
+        padding-left: 0.5rem;
 }
 
 .form-button{
@@ -442,12 +469,19 @@
 
 .checkout-summary{
         width: 35%;
+        /* height: 100%; */
+        /* background-color: #59ce28; */
         position: relative;
-        border-style: solid;
-        border-width: thin;
-        border-color: orange;
+        border-style: none;
         padding: 1rem 1rem 1rem 1rem;
         margin: 3rem;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                margin: 1rem auto;
+                padding: 1rem;
+                /* border-radius: 15px; */
+                box-shadow: -5px -5px 10px rgba(225, 225, 225, 0.5), 2px 2px 5px rgba(94, 104, 121, 0.3);
 }
 
 .summary-header{
@@ -456,6 +490,7 @@
 
 .summary-body{
     padding-top: 1rem;
+    
 }
 
 .checked-item{
@@ -483,9 +518,25 @@
     color: orange
 }
 
+.add-item{
+    padding: 0 1rem 0 1rem;
+    border-style: none;
+    transition: .3s;
+}
+
+.add-item:hover{
+    color: orange
+}
+
 .checkout-page{
     display: flex;
     justify-content: space-between;
+    /* background-color: red; */
+    height: 50%;
+}
+
+.success-container{
+    margin-top: 1rem;
 }
 
 .success-header{
@@ -552,6 +603,73 @@
 .social-media-content{
     display: flex;
     justify-content: space-evenly;
+}
+
+.login-form-container{
+display: flex;
+justify-content: center;
+align-items: center;
+/* background-color: #59ce28; */
+padding-top: 3rem;
+}
+.login-form{
+    /* background-color: blue; */
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login-form-header{
+    /* background-color: green */
+}
+
+.login-form-inputs{
+    /* background-color: red; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+label{
+    /* background-color: orange; */
+    width: 40%;
+    display: flex;
+    justify-content: space-between;
+    /* padding-left: 2rem; */
+}
+
+input{
+    outline: none;
+    /* padding-left: 0.5rem; */
+}
+
+.login-input{
+    padding-left: 0.5rem;
+}
+
+.login-label{
+    padding-left: 1rem;
+}
+
+.session-submit{
+    width: 50%;
+        height: 48px;
+        border-radius: 5px;
+        font-weight: 400;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        background: #59ce28;
+        color: white;
+        letter-spacing: 1.15px;
+        transition: .3s;
+}
+
+.session-submit:hover{
+    background-color: #7ed957;
 }
 
 
