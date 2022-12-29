@@ -14,7 +14,7 @@ import Cart from './cart'
 import Checkout from "./checkout";
 import Success from "./success";
 const App = () => (
- <div>
+ <div id='page-container'>
     <header>
       {/* <Link to="/" className="header-link">
         <h1>WaWa</h1>
