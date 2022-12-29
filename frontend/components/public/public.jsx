@@ -137,19 +137,17 @@ class Public extends React.Component{
                 {/* <h2>New Arrivals</h2> */}
                 {this.listProducts()}
             </div>
-                {/* <ToastContainer
-                    position="bottom-left"
-                    autoClose={5000}
-                    hideProgressBar={false}
-                    newestOnTop={false}
-                    closeOnClick
-                    rtl
-                    pauseOnFocusLoss
-                    draggable
-                    pauseOnHover
-                    theme="colored"
-                /> */}
-                
+                <div className='about'>
+                    <h2>WaWa Produce Mission</h2>
+                    <h3>
+                        Are you a person that loves deals? Do you care about your customer
+                         experience? Do you want to establish and maintain a loyal customer base? 
+                    </h3>
+                    <h3>
+                        If you answered Yes, to any of these questions, then WaWa Produce is your solution and partner! At WaWa Produce our mission is to relieve you from the headaches of finding the greatest deals in the market. We take away the stress, haggling, and uncertainty of finding Produce deals. 
+                        With a simple tap of a button, the greatest deals will be delivered to your door with NO extra charge!
+                    </h3>
+                </div>
             </div>
             
         )

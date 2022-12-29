@@ -120,6 +120,8 @@
     justify-content: space-between;
     flex-wrap: wrap;
     margin-top: 2rem;
+    min-height: 35rem;
+    border-bottom: 1px solid rgb(187, 187, 187);
  }
 
  .product{
@@ -479,4 +481,18 @@
 .checkout-page{
     display: flex;
     justify-content: space-between;
+}
+
+.success-header{
+    font-weight: 400;
+    font-size: 30px;
+    text-align: center;
+    color: green
+}
+
+.success-header-sms{
+    color: green;
+        font-weight: 400;
+    font-size: 30px;
+    text-align: center;
 }
