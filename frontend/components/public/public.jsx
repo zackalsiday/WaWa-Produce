@@ -8,6 +8,7 @@ import {addToCart} from '../../reducers/cartSlice'
 import usersReducer from '../../reducers/users_reducer';
 import { useSelector } from "react-redux";
 import configureStore from '../../store/store'
+import { HashLink as Move} from 'react-router-hash-link';
 // import offical from '../../images/offical.png'
 // import { ToastContainer } from "react-toastify";
 // import "react-toastify/dist/ReactToastify.css";
@@ -125,20 +126,22 @@ class Public extends React.Component{
                     <Link to='/'>
                         <h3>Home</h3>
                     </Link>
-                    <Link>
+                    <Move to='#about' smooth>
                     <h3>About</h3>
-                    </Link>
-                    <Link>
+                    </Move>
+                    <Move to='#contact' smooth>
                     <h3>Contact</h3>
-                    </Link>
+                    </Move>
                    
                 </nav>
             <div>
                 {/* <h2>New Arrivals</h2> */}
                 {this.listProducts()}
             </div>
-                <div className='about'>
-                    <h2>WaWa Produce Mission</h2>
+                <div id='about'>
+                    <h2>Our Mission At WaWa Produce</h2>
+                    <div className='about-content'>
+
                     <h3>
                         Are you a person that loves deals? Do you care about your customer
                          experience? Do you want to establish and maintain a loyal customer base? 
@@ -147,7 +150,9 @@ class Public extends React.Component{
                         If you answered Yes, to any of these questions, then WaWa Produce is your solution and partner! At WaWa Produce our mission is to relieve you from the headaches of finding the greatest deals in the market. We take away the stress, haggling, and uncertainty of finding Produce deals. 
                         With a simple tap of a button, the greatest deals will be delivered to your door with NO extra charge!
                     </h3>
+                    </div>
                 </div>
+              
             </div>
             
         )

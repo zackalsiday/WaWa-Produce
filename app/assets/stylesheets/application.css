@@ -496,3 +496,51 @@
     font-size: 30px;
     text-align: center;
 }
+
+#about{
+    padding-top: 2rem;
+}
+
+.about-content{
+    text-align: center;
+    padding: 2% 10% 0 10%;
+    font-size: larger;
+}
+
+.about-content h3{
+    padding-top: 1rem;
+}
+
+
+#contact{
+    background-color: orange;
+    height: 10rem;
+    border-top: 1px solid rgb(187, 187, 187);
+    padding-top: 1rem;
+}
+
+.contact-header{
+    display: flex;
+    justify-content: center;
+}
+
+.contact-sections{
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 1rem;
+}
+
+.linkedin{
+    text-decoration: none;
+    color: black;
+}
+
+
+.social-media-content{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+
+
+
