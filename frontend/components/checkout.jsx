@@ -28,8 +28,7 @@ const Checkout = (props) => {
         productName: '',
         productId: '',
         quantity: '',
-        total: '',
-        Re: 'no'
+        total: ''
     }
     const handleClearCart = () => {
         dispatch(clearCart())
@@ -44,11 +43,14 @@ const Checkout = (props) => {
     }
 
     const handleSubmit = () => {
-        const {name, phone, email, productName, productId, quantity, total, address, city, state, zipcode,Re} = initialState
- 
-         cart.cartItems.map(cartItem => (
+        const {name, phone, email, productName, productId, quantity, total, address, city, state, zipcode} = initialState
+        const form = [name, phone, email, address, city, state, zipcode] 
+        if (form.every((x) => x != '')){
+                 cart.cartItems.map(cartItem => (
             dispatch(createOrder({ name: name, email: email, phone: `${phone}`, product_name: cartItem.name, product_id: cartItem.id, quantity: cartItem.cartQuantity, total: cartItem.cartQuantity * cartItem.price, address: `${address}, ${city}, ${state}, ${zipcode}` }))
             )).then(props.history.push('/success'))
+        }
+    
        
        
        
