@@ -20,7 +20,7 @@ class Order extends React.Component{
                         <h4>Client: {item.name}</h4>
                         <h4>Email: {item.email}</h4>
                         <h4>Product: {item.productName}</h4>
-                        <h4>Product Id: {item.productId}</h4>
+                        {/* <h4>Product Id: {item.productId}</h4> */}
                         <h4>Quantity: {item.quantity}</h4>
                         <h4>Total: {item.total}</h4>
                     </li>
@@ -34,7 +34,9 @@ class Order extends React.Component{
 
         return (
 
-            <div>{this.listOrders()}</div>
+            <div className='orders-list'>
+                {this.listOrders()}
+            </div>
         )
     }
 }

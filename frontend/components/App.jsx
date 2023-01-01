@@ -13,6 +13,7 @@ import OrderContainer from './order/order_container'
 import Cart from './cart'
 import Checkout from "./checkout";
 import Success from "./success";
+import AdminNav from "./adminNav";
 const App = () => (
  <div id='page-container'>
     <header>
@@ -20,8 +21,8 @@ const App = () => (
         <h1>WaWa</h1>
       </Link> */}
       
-      <GreetingContainer />
-      <ProtectedRoute path='/' component={OrderContainer} />
+      {/* <GreetingContainer /> */}
+      <ProtectedRoute path='/' component={GreetingContainer} />
     </header>
   
 

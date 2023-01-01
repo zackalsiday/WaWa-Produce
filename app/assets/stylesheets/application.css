@@ -672,6 +672,67 @@ input{
     background-color: #7ed957;
 }
 
+.admin-page{
+    padding: 1rem 2rem 0 2rem
+}
 
+.admin-header{
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 1rem;
+}
 
+.logout-but{
+    padding: 0 1rem 0 1rem;
+    background-color: white;
+    border-style: solid;
+    border-width: thin;
+    border-color: rgba(66, 64, 64, 0.527);
+    font-size: large;
+    transition: .3s;
+    border-radius: 2rem;
+}
 
+.logout-but:hover{
+    background-color: red;
+    color: white;
+}
+
+.admin-nav-bar{
+    height: 78px;
+        background-color: orange;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+}
+
+.admin-nav-bar a {
+    text-decoration: none;
+    color: white;
+}
+
+ .admin-nav-bar h3 {
+     padding: 0 1rem 0 1rem;
+     border-radius: 7px;
+     transition: .3s;
+ }
+
+ .admin-nav-bar h3:hover {
+     background-color: #7ed957;
+     font-size: medium;
+
+ }
+
+ .orders-list{
+    overflow: scroll;
+    background-color: red;
+ }
+
+ .orders-list ul{
+    padding-top: 2rem;
+    list-style-type: none;
+ }
+
+ .orders-list li{
+    padding-bottom: 1rem;
+ }

@@ -1,8 +1,8 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-
-
-
+import { Router, Switch, Link, BrowserRouter, Routes } from 'react-router-dom'
+import { AuthRoute, ProtectedRoute } from '../../util/route_util'
+import AdminNav from '../adminNav';
+import OrderContainer from '../order/order_container'
 const Greeting = ({ currentUser, logout }) => {
     const sessionLinks = () => (
         <nav className="login-signup">
@@ -12,13 +12,22 @@ const Greeting = ({ currentUser, logout }) => {
         </nav>
     );
     const personalGreeting = () => (
-        <hgroup className="header-group">
-            <h2 className="header-name">Hi, {currentUser.username}!</h2>
-            <button className="header-button" onClick={logout}>Log Out</button>
-        </hgroup>
+        <div className="admin-header">
+            <h2>WaWa Administration Page</h2>
+            <button className="logout-but" onClick={logout}>Log Out</button>
+        </div>
     );
 
-    return currentUser ? personalGreeting() : sessionLinks();
+    return (
+        <div className='admin-page'>
+            {currentUser ? personalGreeting() : sessionLinks()}
+             <AdminNav/>
+             <Switch>
+                <ProtectedRoute path="/orders" component={OrderContainer}/>
+             </Switch>
+        </div>
+        
+        )
 };
 
 
