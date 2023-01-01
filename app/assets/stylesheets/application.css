@@ -765,18 +765,23 @@ input{
     flex-direction: column;
     justify-content: space-between;
     width: 10%;
-    padding: 2rem 0 2rem 0;
+    padding: 2.5rem 0 2.5rem 0;
     /* flex-direction: column; */
  }
 
  .order-options button{
     height: 5vh;
     font-size: large;
-    border-style: solid ;
-    border-width: thin;
-    background-color: white;
+    /* border-style: solid ;
+    border-width: thin; */
+    border: none;
+    background-color: rgb(222, 210, 210);
  }
- .accept-order + .decline-order{
+ .accept-order{
+    transition: .3s;
+ }
+
+ .decline-order{
     transition: .3s;
  }
 
