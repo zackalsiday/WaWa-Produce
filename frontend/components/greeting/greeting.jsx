@@ -23,7 +23,10 @@ const Greeting = ({ currentUser, logout }) => {
             {currentUser ? personalGreeting() : sessionLinks()}
              <AdminNav/>
              <Switch>
-                <ProtectedRoute path="/orders" component={OrderContainer}/>
+                <ProtectedRoute path="/pending" component={OrderContainer}/>
+                <ProtectedRoute path="/accepted" component={OrderContainer} />
+                <ProtectedRoute path="/declined" component={OrderContainer} />
+                <ProtectedRoute path="/completed" component={OrderContainer} />
              </Switch>
         </div>
         

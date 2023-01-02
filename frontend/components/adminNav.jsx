@@ -8,8 +8,8 @@ class AdminNav extends React.Component{
     render(){
         return (
             <nav className='admin-nav-bar'>
-                <Link to='/orders'>
-                    <h3>Orders</h3>
+                <Link to='/pending'>
+                    <h3>Pending</h3>
                 </Link>
                 <Link to='/accepted'>
                     <h3>Accepted</h3>

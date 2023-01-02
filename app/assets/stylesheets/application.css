@@ -769,20 +769,24 @@ input{
     /* flex-direction: column; */
  }
 
- .order-options button{
-    height: 5vh;
+ .accept-order{
+    transition: .3s;
+      height: 5vh;
     font-size: large;
     /* border-style: solid ;
     border-width: thin; */
     border: none;
     background-color: rgb(222, 210, 210);
  }
- .accept-order{
-    transition: .3s;
- }
 
  .decline-order{
     transition: .3s;
+        height: 5vh;
+    font-size: large;
+    /* border-style: solid ;
+    border-width: thin; */
+    border: none;
+    background-color: rgb(222, 210, 210);
  }
 
  .accept-order:hover{
@@ -793,4 +797,42 @@ input{
  .decline-order:hover{
     background-color: red;
     color:white;
+ }
+
+ .order-but-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* padding: 3.5rem 1rem 3.5rem 1rem; */
+    width: 10%;
+    /* background-color: red; */
+   
+ }
+
+ .order-complete-but{
+    /* padding: 0 1rem 0 1rem; */
+     height: 5vh;
+     font-size: large;
+     border: none;
+     background-color: rgb(222, 210, 210);
+     transition: .3s;
+    /* height: 30% ; */
+ }
+
+  .order-complete-but:hover{
+    background-color: #59ce28;
+    color: white
+ }
+
+ .order-clear-but{
+    transition: .3s;
+     height: 5vh;
+     font-size: large;
+     border: none;
+     background-color: rgb(222, 210, 210);
+ }
+
+ .order-clear-but:hover{
+    background-color: red;
+    color: white;
  }
