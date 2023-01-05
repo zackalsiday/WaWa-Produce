@@ -10,26 +10,34 @@ import {
     getTotals,
     removeFromCart
 } from "../reducers/cartSlice";
-const Cart = () => {
+import { fetchProducts } from "../actions/product_actions";
+const Cart = (props) => {
     //  let  cart = configureStore().getState().entities.carts
      let state = configureStore().getState()
      const cart = useSelector((state) => state.entities.carts)
-
     useEffect(() => {
         dispatch(getTotals());
     }, [cart, dispatch]);
 
+
     const handleRemoveFromCart = (product) => {
         dispatch(removeFromCart(product));
     };
+    const product = () => {
+        dispatch(fetchProducts()).then((res) => {console.log(res.products)})
+    }
 
     const handleAddToCart = (product) => {
-        dispatch(addToCart(product));
+        if (product.cartQuantity < product.quantity){
+
+            dispatch(addToCart(product))
+        }
     };
 
     const handleDecreaseCart = (product) => {
         dispatch(decreaseCart(product));
     };
+
 
     const handleClearCart = () => {
         dispatch(clearCart());
@@ -37,6 +45,7 @@ const Cart = () => {
     return (
         <div className="cart-container">
             <h2>Shopping Cart</h2>
+            {/* {console.log(product())} */}
             {cart.cartItems.length === 0 ? (
                 <div className="cart-empty">
                     <p>Your cart is currently empty</p>
