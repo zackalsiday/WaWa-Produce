@@ -20,8 +20,8 @@ class AdminNav extends React.Component{
                 <Link to='/completed'>
                     <h3>Completed</h3>
                 </Link>
-                <Link to='/newproduct'>
-                    <h3>New Product</h3>
+                <Link to='/products'>
+                    <h3>Products</h3>
                 </Link>
             </nav>
         )

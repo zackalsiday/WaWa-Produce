@@ -8,19 +8,19 @@ class Order extends React.Component{
     }
     componentDidMount() {
         this.props.fetchOrders()
-
+        this.props.fetchProducts()
     }
 
     listOrders() {
         let list = Object.values(this.props.orders)
         let filterd = list.filter(order => order.status === this.props.location.pathname.replace('/',''))
-        console.log(filterd)
+        // console.log(this.props.products)
 
         return (
             <ul>
                 {filterd.map((item) => (
                 <div className='order-item'>
-                    {console.log(item.id)}
+                    {/* {console.log(this.props.products[item.productId])} */}
                     <li>
                         <h4>Client: {item.name}</h4>
                         <h4>Email: {item.email}</h4>
@@ -33,7 +33,7 @@ class Order extends React.Component{
                         this.props.location.pathname === '/pending' ?
 
                     <div className='order-options'>
-                        <button onClick={() => this.props.updateOrder({id: item.id, status: 'accepted'})}className='accept-order'>Accept</button>
+                        <button onClick={() => this.props.updateOrder({id: item.id, status: 'accepted'}).then((res) => {this.props.updateProduct({id: item.productId, quantity: this.props.products[item.productId].quantity - item.quantity})})}className='accept-order'>Accept</button>
                         <button onClick={() => this.props.updateOrder({ id: item.id, status: 'declined' })}className='decline-order'>Decline</button>
                     </div> : this.props.location.pathname === '/accepted' ?
                     <div className='order-but-container'>
