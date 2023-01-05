@@ -3,12 +3,18 @@ import React from 'react'
 class Order extends React.Component{
     constructor(props){
         super(props)
-
-
+        this.handleAcceptOrder = this.handleAcceptOrder.bind(this);
     }
     componentDidMount() {
         this.props.fetchOrders()
         this.props.fetchProducts()
+    }
+
+    handleAcceptOrder(item){
+        if (this.props.products[item.productId].quantity > 0){
+
+            this.props.updateOrder({ id: item.id, status: 'accepted' }).then((res) => { this.props.updateProduct({ id: item.productId, quantity: this.props.products[item.productId].quantity - item.quantity }) })
+        }
     }
 
     listOrders() {
@@ -20,7 +26,7 @@ class Order extends React.Component{
             <ul>
                 {filterd.map((item) => (
                 <div className='order-item'>
-                    {/* {console.log(this.props.products[item.productId])} */}
+                    {console.log(this.props.products[item.productId].quantity)}
                     <li>
                         <h4>Client: {item.name}</h4>
                         <h4>Email: {item.email}</h4>
@@ -28,12 +34,13 @@ class Order extends React.Component{
                         {/* <h4>Product Id: {item.productId}</h4> */}
                         <h4>Quantity: {item.quantity}</h4>
                         <h4>Total: ${item.total}</h4>
+                        <h4>{this.props.products[item.productId].quantity} in Stock</h4>
                     </li>
                     {
                         this.props.location.pathname === '/pending' ?
 
                     <div className='order-options'>
-                        <button onClick={() => this.props.updateOrder({id: item.id, status: 'accepted'}).then((res) => {this.props.updateProduct({id: item.productId, quantity: this.props.products[item.productId].quantity - item.quantity})})}className='accept-order'>Accept</button>
+                        <button onClick={() => this.handleAcceptOrder(item)}className='accept-order'>Accept</button>
                         <button onClick={() => this.props.updateOrder({ id: item.id, status: 'declined' })}className='decline-order'>Decline</button>
                     </div> : this.props.location.pathname === '/accepted' ?
                     <div className='order-but-container'>
