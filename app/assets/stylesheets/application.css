@@ -836,3 +836,15 @@ input{
     background-color: red;
     color: white;
  }
+
+ .current-products{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    padding-right: 1rem;
+ }
+
+ .product-form{
+    /* background-color: red; */
+    width: 19%;
+ }

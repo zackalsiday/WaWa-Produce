@@ -23,6 +23,7 @@ class Order extends React.Component{
             <div className='current-products'>
                 {list.map((item) => (
                     <form className='product-form'>
+                        <h2>{item.name}</h2>
                         {/* <h3>{item.name}</h3> */}
                         <label>Product Name</label>
                         <input type="text" value={item.name} onChange={e => this.props.updateProduct({id: item.id, name: e.target.value})}/>
