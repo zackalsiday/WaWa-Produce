@@ -27,6 +27,7 @@ const Greeting = ({ currentUser, logout }) => {
                 <ProtectedRoute path="/accepted" component={OrderContainer} />
                 <ProtectedRoute path="/declined" component={OrderContainer} />
                 <ProtectedRoute path="/completed" component={OrderContainer} />
+                <ProtectedRoute path="/products" component={OrderContainer} />
              </Switch>
         </div>
         
