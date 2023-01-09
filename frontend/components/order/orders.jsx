@@ -23,6 +23,7 @@ class Order extends React.Component{
             <div className='current-products'>
                 {list.map((item) => (
                     <form className='product-form'>
+                        {console.log(item.id)}
                         <h2>{item.name}</h2>
                         {/* <h3>{item.name}</h3> */}
                         <label>Product Name</label>
@@ -47,6 +48,8 @@ class Order extends React.Component{
                         <h4>${item.price}</h4>
                         <h4>{item.description}</h4>
                         <h4>{item.quantity} in stock</h4> */}
+                        <br />
+                        <button onClick={() => this.props.deleteProduct(item.id)}>Delete</button>
                     </form>
 
                 ))}
@@ -62,17 +65,21 @@ class Order extends React.Component{
 
         return (
             <ul>
+                {/* {console.log('hello')} */}
                 {filterd.map((item) => (
                 <div className='order-item'>
-                    {console.log(this.props.products[item.productId].quantity)}
+                    {/* {console.log(this.props.products[item.productId].quantity)} */}
                     <li>
                         <h4>Client: {item.name}</h4>
                         <h4>Email: {item.email}</h4>
                         <h4>Product: {item.productName}</h4>
                         {/* <h4>Product Id: {item.productId}</h4> */}
+                        {/* {console.log(item.quantity)} */}
                         <h4>Quantity: {item.quantity}</h4>
                         <h4>Total: ${item.total}</h4>
-                        <h4>{this.props.products[item.productId].quantity} in Stock</h4>
+                            {/* {console.log(this.props.products)} */}
+                            <h4>{this.props.products[item.productId] !== undefined ?  `${this.props.products[item.productId].quantity}  in Stock` : 'Item removed from stock' }
+                            </h4>
                     </li>
                     {
                         this.props.location.pathname === '/pending' ?
@@ -104,6 +111,7 @@ class Order extends React.Component{
         return (
 
             <div className='orders-list'>
+                {/* {console.log('hello')} */}
                 {this.listOrders()}
                 {this.props.location.pathname === '/products' ? this.listProducts(): ''}
             </div>

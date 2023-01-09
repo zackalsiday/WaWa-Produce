@@ -839,12 +839,21 @@ input{
 
  .current-products{
     display: flex;
-    justify-content: space-between;
-    flex-direction: row;
-    padding-right: 1rem;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    /* padding-right: 1rem; */
+    padding-bottom: 1rem;
+    /* width: 80%; */
+    /* overflow: scroll; */
+    /* background-color:red; */
  }
 
  .product-form{
     /* background-color: red; */
-    width: 19%;
+    min-width: 20%;
+    padding-top: 1rem;
+ }
+
+ .product-form h2{
+    color:#59ce28
  }
